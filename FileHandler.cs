@@ -68,7 +68,8 @@ namespace ls_subsplits_ui
                 }
             }
 
-            document.DocumentElement.AppendChild(document.ImportNode(run.AutoSplitterSettings, true));
+            if (run.AutoSplitterSettings != null)
+                document.DocumentElement.AppendChild(document.ImportNode(run.AutoSplitterSettings, true));
             document.Save(filePath);
         }
 
